@@ -1,6 +1,7 @@
 package ca.josue_lubaki.kmovies.data.api
 
 import ca.josue_lubaki.kmovies.data.model.MovieApiResponse
+import ca.josue_lubaki.kmovies.data.model.MovieRemote
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
@@ -17,7 +18,7 @@ internal class MovieService : KtorApi() {
         parameter("page", page)
     }.body()
 
-    suspend fun getMovie(id: Int) : MovieApiResponse = client.get {
+    suspend fun getMovie(id: Int) : MovieRemote = client.get {
         pathUrl("movie/$id")
     }.body()
 }
