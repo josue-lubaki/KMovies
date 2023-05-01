@@ -14,17 +14,24 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ca.josue_lubaki.kmovies.android.ui.theme.Colors.Dark1
+import ca.josue_lubaki.kmovies.android.ui.theme.Colors.Dark2
+import ca.josue_lubaki.kmovies.android.ui.theme.Colors.Dark3
+import ca.josue_lubaki.kmovies.android.ui.theme.Colors.Dark4
+import ca.josue_lubaki.kmovies.android.ui.theme.Colors.Red
 
 @Composable
 fun MyApplicationTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
         darkColors(
-            primary = Color(0xFFBB86FC),
-            primaryVariant = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = Dark4,
+            primaryVariant = Dark3,
+            secondary = Red,
+            surface = Dark2,
+            background = Dark1
         )
     } else {
         lightColors(

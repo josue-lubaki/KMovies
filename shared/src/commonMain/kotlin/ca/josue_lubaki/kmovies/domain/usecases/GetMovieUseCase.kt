@@ -10,7 +10,7 @@ import org.koin.core.component.inject
  * version : 1.0.0
  */
 
-internal class GetMovieUseCase : KoinComponent {
+class GetMovieUseCase : KoinComponent {
     private val movieRepository by inject<MovieRepository>()
 
     @Throws(Exception::class)
