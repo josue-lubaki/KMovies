@@ -1,6 +1,7 @@
 package ca.josue_lubaki.kmovies.android
 
 
+import Detail
 import Home
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.padding
@@ -18,11 +19,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import ca.josue_lubaki.kmovies.android.common.MovieAppBar
+import ca.josue_lubaki.kmovies.android.detail.DetailScreen
+import ca.josue_lubaki.kmovies.android.detail.DetailViewModel
 import ca.josue_lubaki.kmovies.android.home.HomeScreen
 import ca.josue_lubaki.kmovies.android.home.HomeViewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import moviesDestination
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 /**
  * created by Josue Lubaki
@@ -81,9 +85,19 @@ fun MovieSetup() {
                         homeViewModel.loadMovies(forceReload = false)
                     },
                     navigateToDetails = { movie ->
-
+                        navController.navigate("${Detail.route}/${movie.id}")
                     }
                 )
+            }
+
+            composable(Detail.routeWithArgs){
+                val movieId = it.arguments?.getString("movieId") ?: "0"
+                val detailViewModel : DetailViewModel = koinViewModel(
+                    parameters = {
+                        parametersOf(movieId.toInt())
+                    }
+                )
+                DetailScreen(uiState = detailViewModel.uiState)
             }
         }
     }
