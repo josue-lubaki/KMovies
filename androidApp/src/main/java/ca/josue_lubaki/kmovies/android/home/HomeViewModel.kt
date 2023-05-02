@@ -21,7 +21,7 @@ class HomeViewModel(
     private var currentPage = 1
 
     init {
-        loadMovies()
+        loadMovies(forceReload = false)
     }
 
     fun loadMovies(forceReload : Boolean = false){
