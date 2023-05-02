@@ -72,17 +72,16 @@ fun MovieListItem(
                 Surface(
                     color = Color.Black.copy(alpha = 0.6f),
                     modifier = Modifier
-                        .size(50.dp)
-                        .clip(CircleShape)
-                        .padding(12.dp),
+                        .size(50.dp),
+                    shape = CircleShape,
                 ){
-
                     Image(
                         painter = painterResource(id = R.drawable.play_button),
                         contentDescription = null,
-                        modifier = Modifier.align(Alignment.Center)
+                        modifier = Modifier
+                            .padding(12.dp)
+                            .align(Alignment.Center)
                     )
-
                 }
             }
 
