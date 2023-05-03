@@ -21,14 +21,17 @@ struct HomeScreen: View {
                 LazyVGrid(columns: gridColumn, spacing: 16){
                     
                     ForEach(viewModel.movies, id: \.id){ movie in
-                        MovieGridItem(movie: movie)
-                            .task {
-                                if movie == viewModel.movies.last
-                                    && !viewModel.isLoading
-                                    && !viewModel.loadFinished {
-                                        await viewModel.loadMovies()
+                        NavigationLink(value: movie){
+                            MovieGridItem(movie: movie)
+                                .task {
+                                    if movie == viewModel.movies.last
+                                        && !viewModel.isLoading
+                                        && !viewModel.loadFinished {
+                                            await viewModel.loadMovies()
+                                    }
                                 }
-                            }
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                     
                     if viewModel.isLoading {
@@ -37,6 +40,9 @@ struct HomeScreen: View {
                     
                 }
                 .padding(.horizontal, 12)
+                .navigationDestination(for: Movie.self){ movie in
+                    DetailScreen(movie: movie)
+                }
                 
             }
             .navigationTitle("Movies")

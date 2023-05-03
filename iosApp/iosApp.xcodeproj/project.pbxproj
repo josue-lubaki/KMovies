@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		B0BE6AC22A02C8680012E087 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE6AC12A02C8680012E087 /* HomeViewModel.swift */; };
 		B0BE6AC52A02CB460012E087 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE6AC42A02CB460012E087 /* Sample.swift */; };
 		B0BE6AC72A02CBE90012E087 /* MovieGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE6AC62A02CBE90012E087 /* MovieGridItem.swift */; };
+		B0BE6ACC2A02E8BF0012E087 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE6ACB2A02E8BF0012E087 /* DetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		B0BE6AC12A02C8680012E087 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B0BE6AC42A02CB460012E087 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		B0BE6AC62A02CBE90012E087 /* MovieGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridItem.swift; sourceTree = "<group>"; };
+		B0BE6ACB2A02E8BF0012E087 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				B0BE6AC82A02E75E0012E087 /* detail */,
 				B0BE6AC32A02CB330012E087 /* util */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				B0BE6AC02A02C8470012E087 /* home */,
@@ -115,6 +118,14 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		B0BE6AC82A02E75E0012E087 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				B0BE6ACB2A02E8BF0012E087 /* DetailScreen.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,8 +154,9 @@
 		7555FF73242A565900829871 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = orgName;
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
@@ -209,6 +221,7 @@
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				B0BE6AC52A02CB460012E087 /* Sample.swift in Sources */,
+				B0BE6ACC2A02E8BF0012E087 /* DetailScreen.swift in Sources */,
 				B0BE6AC22A02C8680012E087 /* HomeViewModel.swift in Sources */,
 				7555FF83242A565900829871 /* HomeScreen.swift in Sources */,
 				B0BE6AC72A02CBE90012E087 /* MovieGridItem.swift in Sources */,
@@ -269,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -324,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
