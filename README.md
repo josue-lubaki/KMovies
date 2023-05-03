@@ -23,15 +23,15 @@ Application Kotlin Multiplatform - Movies
         <th align="center" colspan="2"> List of Movies </th>
     </tr>
     <tr>
-        <td align="center"><img src="https://i.imgur.com/uXd1RpV.jpg" width=360 height=760></td>
-        <td align="center"><img src="https://i.imgur.com/zvK66c2.png" width=360 height=760></td>
+        <td align="center"><img src="https://i.imgur.com/uXd1RpV.jpg" width=360 height=720></td>
+        <td align="center"><img src="https://i.imgur.com/zvK66c2.png" width=360 height=720></td>
     </tr>
     <tr> </tr>
     <tr>
         <th align="center" colspan="2"> Detail Movie </th>
     </tr>
     <tr>
-        <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=760></td>
-        <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=760></td>
+        <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=720></td>
+        <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=720></td>
     </tr>
 </table>
