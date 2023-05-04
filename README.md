@@ -31,7 +31,7 @@ Application Kotlin Multiplatform - Movies
         <th align="center" colspan="2"> Detail Movie </th>
     </tr>
     <tr>
-        <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=720></td>
+        <td align="center"><img src="https://i.imgur.com/XfSHyey.png" width=360 height=720></td>
         <td align="center"><img src="https://i.imgur.com/2zfndwZ.png" width=360 height=720></td>
     </tr>
 </table>
