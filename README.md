@@ -55,7 +55,7 @@ Run the app (Run > Run 'app')
 - [Ktor-Serialization](https://ktor.io/docs/serialization.html)
 
 ## License
-[MIT License](https://github.com/josue-lubaki/KMovies/blob/main/LICENCE)
+[MIT License](https://github.com/josue-lubaki/KMovies/blob/main/LICENSE)
 
 ```
 Copyright (c) 2023 Josue Lubaki
