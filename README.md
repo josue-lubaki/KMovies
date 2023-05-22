@@ -53,6 +53,7 @@ Run the app (Run > Run 'app')
 - [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - [Ktor-client](https://ktor.io/docs/request.html)
 - [Ktor-Serialization](https://ktor.io/docs/serialization.html)
+- Image-loader
 
 ## License
 [MIT License](https://github.com/josue-lubaki/KMovies/blob/main/LICENSE)
