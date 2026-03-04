@@ -46,7 +46,7 @@ fun MovieListItem(
 
     Card(
         modifier = modifier
-            .height(220.dp)
+            .height(320.dp)
             .clickable { onClick() },
         shape = RoundedCornerShape(8.dp),
     ){
@@ -60,7 +60,6 @@ fun MovieListItem(
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .fillMaxSize()
                         .clip(
                             RoundedCornerShape(
                                 bottomStart = 2.dp,

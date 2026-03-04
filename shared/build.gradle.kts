@@ -1,13 +1,21 @@
+import java.util.Properties
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    kotlin("plugin.serialization")
+    id("com.codingfeline.buildkonfig") version "0.17.1"
+}
 
-    // add kotlin serialization plugin
-    kotlin("plugin.serialization") version "1.8.0"
+val localProperties = Properties().apply {
+    val propsFile = rootProject.file("local.properties")
+    if (propsFile.exists()) {
+        load(propsFile.inputStream())
+    }
 }
 
 kotlin {
-    android {
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -26,8 +34,8 @@ kotlin {
     }
 
     // Dependencies version
-    val ktorVersion = "2.2.4"
-    val coroutineVersion = "1.6.4"
+    val ktorVersion = "3.0.3"
+    val coroutineVersion = "1.10.1"
     val koinVersion = "3.3.2"
 
     sourceSets {
@@ -82,10 +90,34 @@ kotlin {
     }
 }
 
+buildkonfig {
+    packageName = "ca.josue_lubaki.kmovies"
+
+    defaultConfigs {
+        buildConfigField(
+            com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING,
+            "API_KEY",
+            localProperties.getProperty("API_KEY")
+                ?: error("API_KEY est absent de local.properties")
+        )
+        buildConfigField(
+            com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING,
+            "BASE_URL",
+            localProperties.getProperty("BASE_URL")
+                ?: error("BASE_URL est absent de local.properties")
+        )
+    }
+}
+
 android {
     namespace = "ca.josue_lubaki.kmovies"
-    compileSdk = 33
+    compileSdk = 35
     defaultConfig {
         minSdk = 24
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }

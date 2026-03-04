@@ -36,7 +36,11 @@ class HomeViewModel(
 
             try {
                 val resultMovies = getMoviesUseCase(currentPage)
-                val movies = if(currentPage == 1) resultMovies else uiState.movies + resultMovies
+                val movies = if(currentPage == 1) {
+                    resultMovies.distinctBy { it.id }
+                } else {
+                    (uiState.movies + resultMovies).distinctBy { it.id }
+                }
 
                 currentPage += 1
 

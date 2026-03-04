@@ -1,9 +1,12 @@
 plugins {
-    //trick: for the same plugin versions in all sub-modules
-    id("com.android.application").version("7.4.1").apply(false)
-    id("com.android.library").version("7.4.1").apply(false)
-    kotlin("android").version("1.8.10").apply(false)
-    kotlin("multiplatform").version("1.8.10").apply(false)
+    // Upgrade AGP to 8.5.1+ for 16 KB page size support
+    id("com.android.application").version("8.5.1").apply(false)
+    id("com.android.library").version("8.5.1").apply(false)
+    kotlin("android").version("2.1.20").apply(false)
+    kotlin("multiplatform").version("2.1.20").apply(false)
+    kotlin("plugin.serialization").version("2.1.20").apply(false)
+    id("org.jetbrains.kotlin.plugin.compose").version("2.1.20").apply(false)
+    id("com.codingfeline.buildkonfig").version("0.17.1").apply(false)
 }
 
 tasks.register("clean", Delete::class) {

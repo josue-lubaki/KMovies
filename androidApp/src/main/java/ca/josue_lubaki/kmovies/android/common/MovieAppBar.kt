@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -41,15 +42,18 @@ fun MovieAppBar(
 ) {
 
     Surface(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(56.dp),
+        // Pas de height fixe : la Surface s'adapte à son contenu
+        // (hauteur de la status bar + 56dp du Row)
+        modifier = modifier.fillMaxWidth(),
         elevation = 4.dp,
         color = MaterialTheme.colors.primary
     ){
 
         Row(
             modifier = Modifier
+                .statusBarsPadding() // ← pousse le contenu SOUS la status bar
+                .fillMaxWidth()
+                .height(56.dp)       // hauteur logique du contenu (titre + bouton)
                 .padding(start = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {

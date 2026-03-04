@@ -86,7 +86,7 @@ fun DetailContent(
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(320.dp)
+                .height(480.dp)
         )
 
         Column(

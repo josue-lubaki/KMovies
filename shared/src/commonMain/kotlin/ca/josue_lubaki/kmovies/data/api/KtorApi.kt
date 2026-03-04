@@ -1,6 +1,6 @@
 package ca.josue_lubaki.kmovies.data.api
 
-import ca.josue_lubaki.kmovies.data.model.MovieApiResponse
+import ca.josue_lubaki.kmovies.BuildKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.HttpRequestBuilder
@@ -9,9 +9,6 @@ import io.ktor.http.path
 import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-
-private const val BASE_URL = "https://api.themoviedb.org/"
-private const val API_KEY = "YOUR_API_KEY"
 
 internal abstract class KtorApi {
     protected val client = HttpClient {
@@ -23,11 +20,11 @@ internal abstract class KtorApi {
         }
     }
 
-    fun HttpRequestBuilder.pathUrl(path: String) {
+    fun HttpRequestBuilder.pathUrl(pathString: String) {
         url {
-            takeFrom(BASE_URL)
-            path("3", path)
-            parameter("api_key", API_KEY)
+            takeFrom(BuildKonfig.BASE_URL)
+            path("3", pathString)
         }
+        parameter("api_key", BuildKonfig.API_KEY)
     }
 }
