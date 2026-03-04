@@ -30,6 +30,9 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
+            // Apple interdit les underscores dans les CFBundleIdentifier.
+            // Sans cette ligne, Gradle génère "ca.josue_lubaki.kmovies.shared" → invalide.
+            binaryOption("bundleId", "ca.josuelubaki.kmovies.shared")
         }
     }
 
